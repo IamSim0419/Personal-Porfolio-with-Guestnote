@@ -6,7 +6,7 @@ import Contact from "@/app/sections/Contact";
 export default function Home() {
   return (
       <main className="">
-          <div className="max-w-7xl w-full px-4 md:px-8 mx-auto text-zinc-800">
+          <div className="max-w-7xl w-full px-4 md:px-8 mx-auto">
             <Hero />
             <SectionTwo />
             <FavoriteProjects />

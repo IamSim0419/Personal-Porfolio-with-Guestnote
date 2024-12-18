@@ -24,13 +24,13 @@ import { z } from "zod";
 
 import { formSchema } from "@/lib/formSchema";
 import { send } from "@/lib/email";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { Loader2 } from "lucide-react";
 
 export default function ContactForm() {
-  const [loading, setLoading] = useState(false); // Track loading state
+  const [loading, setLoading] = useState(false);
 
-  // 1. Define your form.
+  // Initialize the form with default values and validation schema
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -41,112 +41,102 @@ export default function ContactForm() {
     },
   });
 
-  // Define a submit handler
+  // Handle form submission
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    setLoading(true); // Set loading to true before the submit process
-    await send(values); // Simulate sending email
-    setLoading(false); // Set loading to false after submit
+    setLoading(true); // Set loading to true before the submission process
+    await send(values); // Simulate sending the email
+    setLoading(false); // Set loading to false after the submission
 
-    // Reset form fields to their default (empty) values after submission
-    form.reset({
-      firstname: "",
-      lastname: "",
-      email: "",
-      message: "",
-    });
+    // Reset form fields after the submission is complete
+    form.reset(); // Clears the form fields
   };
 
   return (
-    <Fragment>
-      <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 py-8 px-4 dark:bg-slate-900">
-        <CardHeader>
-          <CardTitle>Contact Me</CardTitle>
-          <CardDescription>
-            Fill out the form below and we'll get back to you as soon as
-            possible.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-              <FormField
-                control={form.control}
-                name="firstname"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg">Firstname</FormLabel>
-                    <FormControl>
-                      <Input placeholder="First name" {...field} />
-                    </FormControl>
-
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="lastname"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg">Lastname</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Last name" {...field} />
-                    </FormControl>
-
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg">Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="border-primary"
-                        placeholder="Email Address"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage className="text-xs text-red-600" />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg">Message</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        className="border-primary"
-                        placeholder="Type your message here"
-                        id="message"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage className="text-xs text-red-600" />
-                  </FormItem>
-                )}
-              />
-
-              {loading ? (
-                <Button disabled className="flex items-center dark:text-white">
-                  <Loader2 className="mr-1 h-4 w-4 animate-spin" />
-                  <div>Loading...</div>
-                </Button>
-              ) : (
-                <Button type="submit" className="dark:text-white">
-                  Submit
-                </Button>
+    <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 py-8 px-4 dark:bg-slate-900">
+      <CardHeader>
+        <CardTitle className="tracking-wide">Contact Me</CardTitle>
+        <CardDescription>
+          Fill out the form below and we'll get back to you as soon as possible.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+            <FormField
+              control={form.control}
+              name="firstname"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-lg">Firstname</FormLabel>
+                  <FormControl>
+                    <Input placeholder="First name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
               )}
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
-    </Fragment>
+            />
+            <FormField
+              control={form.control}
+              name="lastname"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-lg">Lastname</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Last name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-lg">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      className="border-primary"
+                      placeholder="Email Address"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-xs text-red-600" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-lg">Message</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      className="border-primary"
+                      placeholder="Type your message here"
+                      id="message"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-xs text-red-600" />
+                </FormItem>
+              )}
+            />
+
+            {loading ? (
+              <Button disabled className="flex items-center dark:text-white">
+                <Loader2 className="mr-1 h-4 w-4 animate-spin" />
+                <div>Loading...</div>
+              </Button>
+            ) : (
+              <Button type="submit" className="dark:text-white">
+                Submit
+              </Button>
+            )}
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
   );
 }

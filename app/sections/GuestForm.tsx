@@ -27,6 +27,7 @@ export default function GuestForm() {
         placeholder="Your message"
         required
       />
+      
       <SubmitButton />
     </form>
   );

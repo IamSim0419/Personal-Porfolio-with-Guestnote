@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"
 import "./globals.css";
 import Navbar from "@/app/sections/Header";
 import Footer from "@/app/sections/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"]});
-export const roboto = Roboto({ subsets: ["latin"], weight: "400"});
+const poppins = Poppins({ 
+    subsets: ["latin"], 
+    weight: "400", 
+    display: "swap" 
+});
 
 export const metadata: Metadata = {
   title: "Simreich",
@@ -22,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} grid grid-rows-[auto_1fr_auto] min-h-screen`}
+        className={`${poppins.className} grid grid-rows-[auto_1fr_auto] min-h-screen`}
       >
         <ThemeProvider
           attribute="class"
@@ -31,10 +33,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-            {children}
+          {children}
           <Footer />
         </ThemeProvider>
-
       </body>
     </html>
   );

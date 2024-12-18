@@ -22,9 +22,9 @@ export default function AboutPage() {
           </div>
           <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 p-8 flex flex-col justify-center items-baseline dark:bg-slate-900">
             <h1 className="text-4xl font-semibold md:text-5xl lg:text-6xl">
-              NextJS/Front-End Developer
+              NextJS/Front-End <span className="text-primary">Developer</span>
             </h1>
-            <p className="mt-4 text-gray-900/80 text-xl md:text-2xl">
+            <p className="mt-4 text-gray-900/80 text-xl md:text-xl">
               I'm{" "}
               <span className="underline underline-offset-4 decoration-primary">
                 Simrech Somogod

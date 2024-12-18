@@ -55,7 +55,7 @@ export default async function ProjectsPage() {
                     </div>
 
                     <div className="mt-3">
-                      <h2 className="font-semibold text-2xl md:text-3xl hover:underline hover:underline-offset-4 hover:decoration-primary dark:text-white">
+                      <h2 className="font-semibold text-xl md:text-2xl hover:underline hover:underline-offset-4 hover:decoration-primary dark:text-white">
                         {item.title}
                       </h2>
                       <p className="mt-2 text-muted-foreground line-clamp-3">
