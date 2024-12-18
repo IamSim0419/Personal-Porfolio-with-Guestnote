@@ -1,21 +1,21 @@
-import markusspiske from "@/assets/markusspiske.jpg";
-import javascript from "@/assets/tech-icons/javascript.svg";
-import typescript from "@/assets/tech-icons/typescript.svg";
-import html5 from "@/assets/tech-icons/html5.svg"
-import css3 from "@/assets/tech-icons/css3.svg"
-import nextjs from "@/assets/tech-icons/nextjs-black.png";
-import reactjs from "@/assets/tech-icons/reactjs.svg";
-import tailwindcss from "@/assets/tech-icons/tailwind.svg";
-import nodejs from "@/assets/tech-icons/nodejs.svg";
-import supabase from "@/assets/tech-icons/supabase.svg";
-import redux from "@/assets/tech-icons/redux.svg";
-import prisma from "@/assets/tech-icons/prisma.svg";
-import vscode from "@/assets/tech-icons/vscode.svg";
-import postgresql from "@/assets/tech-icons/postgresql.svg";
-import git from "@/assets/tech-icons/git.svg";
+import markusspiske from "@/assets/images/markusspiske.jpg";
+import javascript from "@/assets/icons/javascript.svg";
+import typescript from "@/assets/icons/typescript.svg";
+import html5 from "@/assets/icons/html5.svg"
+import css3 from "@/assets/icons/css3.svg"
+import nextjs from "@/assets/icons/nextjs-black.png";
+import reactjs from "@/assets/icons/reactjs.svg";
+import tailwindcss from "@/assets/icons/tailwind.svg";
+import nodejs from "@/assets/icons/nodejs.svg";
+import supabase from "@/assets/icons/supabase.svg";
+import redux from "@/assets/icons/redux.svg";
+import prisma from "@/assets/icons/prisma.svg";
+import vscode from "@/assets/icons/vscode.svg";
+import postgresql from "@/assets/icons/postgresql.svg";
+import git from "@/assets/icons/git.svg";
 import github01 from "@/assets/icons/github.svg";
 import figma from "@/assets/icons/figma.svg";
-import npm from "@/assets/tech-icons/npm.svg";
+import npm from "@/assets/icons/npm.svg";
 
 import github02 from "@/assets/icons/github.svg";
 import twitter from "@/assets/icons/twitter.svg";
@@ -64,7 +64,7 @@ const socialMedia = [
     icon: linkedin,
     name: "Linkedin",
     username: "@Sim",
-    link: "http://localhost:3000/",
+    link: "https://www.linkedin.com/in/simreich-somogod-a977a02b3/",
   },
   {
     id: 3,
@@ -77,7 +77,8 @@ const socialMedia = [
 
 export default function SectiomTwo() {
   return (
-    <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-10 text-zinc-800">
+    <section className="my-12 md:my-16">
+      <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-10 text-zinc-800">
       <div className="w-full relative col-span-1">
         <Image
           src={markusspiske}
@@ -90,7 +91,7 @@ export default function SectiomTwo() {
         <Card className="bg-gray-100 border-none dark:bg-slate-900">
           <CardHeader>
             <CardTitle>Explore my tech stack</CardTitle>
-            <CardDescription>Check out the tools i use daily</CardDescription>
+            <CardDescription>I constantly try to improve</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-4">
             {icons.map((icon, index) => (
@@ -115,6 +116,7 @@ export default function SectiomTwo() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 }

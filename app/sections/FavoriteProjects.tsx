@@ -4,7 +4,7 @@ import { client } from "@/lib/sanity";
 import Link from "next/link";
 
 async function getData() {
-  const query = `*[_type == 'project'] | order(_createdAt desc) [0...2] {
+  const query = `*[_type == 'project'] | order(_createdAt desc) [0...3] {
         title,
           _id,
           link,
@@ -32,9 +32,9 @@ export async function FavoriteProjects() {
                 className="group block rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out"
                 target="_blank"
               >
-                <div className="border border-white/70 bg-gray-100 rounded-md h-full p-4 flex flex-col justify-between dark:bg-black">
+                <div className="dark:border dark:border-white/50 bg-gray-100 rounded-xl h-full p-4 flex flex-col justify-between dark:bg-black">
                   <div>
-                    <div className="aspect-video overflow-hidden relative ">
+                    <div className="aspect-video overflow-hidden relative rounded-lg">
                       <Image
                         src={item.imageUrl}
                         alt={item.title}
@@ -57,7 +57,7 @@ export async function FavoriteProjects() {
                       {item.tags.map((tagItem, index) => (
                         <span
                           key={index}
-                          className="inline-flex items-center justify-center gap-x-2 rounded-md bg-primary/10 py-1.5 px-2 text-xs font-medium text-primary ring-2 ring-inset ring-primary/20"
+                          className="inline-flex items-center justify-center m-1 rounded-md bg-primary/10 py-1.5 px-2 text-xs font-medium text-primary ring-2 ring-inset ring-primary/20"
                         >
                           {tagItem}
                         </span>

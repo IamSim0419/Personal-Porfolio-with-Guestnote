@@ -1,3 +1,7 @@
+//! cd sanity
+//! npm run dev
+//! It will show link for Sanity Studio
+
 import { client } from "@/lib/sanity";
 import { ProjectCardType } from "@/lib/types";
 import Image from "next/image";
@@ -22,10 +26,9 @@ export default async function ProjectsPage() {
   const data: ProjectCardType[] = await getData();
 
   return (
-    <main className="my-6 md:my-10 lg:my-16 ">
-      <section className="max-w-7xl w-full mx-auto text-zinc-800 border-4 border-red-500">
-        <div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold dark:text-white">
+    <main className="my-6 md:my-10 lg:my-16">
+      <section className="max-w-7xl w-full px-4 md:px-8 mx-auto text-zinc-800">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold pt-5 dark:text-white">
             Projects
           </h1>
           <p className="leading-7 text-muted-foreground mt-2 text-xl">
@@ -40,9 +43,9 @@ export default async function ProjectsPage() {
                 className="group block rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out"
                 target="_blank"
               >
-                <div className="border border-white/70 bg-gray-400 rounded-md h-full p-4 flex flex-col justify-between dark:bg-black">
+                <div className="dark:border dark:border-white/70 bg-gray-100 rounded-xl h-full p-4 flex flex-col justify-between dark:bg-black">
                   <div>
-                    <div className="aspect-video overflow-hidden relative rounded-sm">
+                    <div className="aspect-video overflow-hidden relative rounded-lg">
                       <Image
                         src={item.imageUrl}
                         alt={item.title}
@@ -65,7 +68,7 @@ export default async function ProjectsPage() {
                       {item.tags.map((tagItem, index) => (
                         <span
                           key={index}
-                          className="inline-flex items-center justify-center gap-x-2 rounded-md bg-primary/10 py-1.5 px-2 text-xs font-medium text-primary ring-2 ring-inset ring-primary/20"
+                          className="inline-flex items-center justify-center m-1 rounded-md bg-primary/10 py-1.5 px-2 text-xs font-medium text-primary ring-2 ring-inset ring-primary/20"
                         >
                           {tagItem}
                         </span>
@@ -75,7 +78,6 @@ export default async function ProjectsPage() {
               </Link>
             ))}
           </div>
-        </div>
       </section>
     </main>
   );

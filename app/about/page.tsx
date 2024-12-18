@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import myProfile from "@/assets/profile.jpeg";
+import myProfile from "@/assets/images/profile.jpeg";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -29,7 +29,7 @@ export default function AboutPage() {
               <span className="underline underline-offset-4 decoration-primary">
                 Simrech Somogod
               </span>{" "} 
-              a dedicated and detail-oriented career shifter with a solid foundation in front-end development, specializing in Next.js. Leveraging expertise from freelancing on Upwork, I have developed and delivered responsive, user-focused web applications. Passionate about creating scalable, modern solutions with clean and effecient code.
+              a dedicated and detail-oriented career shifter with a solid foundation in front-end development, specializing in Next.js. I&apos;ve gained hands-on experience building responsive, user-centric web applications. Passionate about continuous learning, I&apos;m committed to creating efficient, scalable solutions with clean, maintainable code. I&apos;m excited to bring my unique perspective and growing skill set to new development challenges.
             </p>
           </Card>
         </div>
