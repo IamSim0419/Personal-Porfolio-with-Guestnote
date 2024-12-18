@@ -56,7 +56,7 @@ export default function ContactForm() {
       <CardHeader>
         <CardTitle className="tracking-wide">Contact Me</CardTitle>
         <CardDescription>
-          Fill out the form below and we'll get back to you as soon as possible.
+          Fill out the form below and we&apos;ll get back to you as soon as possible.
         </CardDescription>
       </CardHeader>
       <CardContent>

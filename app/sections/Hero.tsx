@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
         <div className="col-span-1 lg:col-span-2 h-full bg-gray-100 min-h-[500px] lg:min-h-[300px] rounded-2xl p-8 flex flex-col justify-center items-baseline dark:bg-slate-900 dark:text-white">
           <h1 className="font-extrabold text-5xl lg:text-6xl">
-            Hey! I'm <span className="text-primary">Simreich</span>⚡
+            Hey! I&apos;m <span className="text-primary">Simreich</span>⚡
           </h1>
           <h2 className="text-3xl md:text-4xl  font-semibold mt-4 text-gray-700 dark:text-white/70">
             Next.js & Front-End Developer based in the PH.
