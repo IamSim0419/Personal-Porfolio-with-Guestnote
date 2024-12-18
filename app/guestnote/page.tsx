@@ -41,7 +41,7 @@ async function getGuestNoteEntry() {
 export default function GuestNotePage() {
   return (
     <main className="my-6 md:my-10 lg:my-16">
-      <section className="max-w-7xl w-full px-4 md:px-8 mx-auto text-zinc-800">
+      <section className="max-w-7xl w-full px-4 md:px-8 mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold pt-5 dark:text-white">
           Guestnote
         </h1>
@@ -89,7 +89,7 @@ async function GuestnoteEntries() {
 
         <p className="text-muted-foreground pl-3 break-words font-medium">
           {item.user?.firstName}:{" "}
-          <span className="text-foreground">{item.message}</span>
+          <span className="text-foreground ml-1">{item.message}</span>
         </p>
       </div>
     </li>
