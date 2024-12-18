@@ -11,12 +11,16 @@ export const send = async (emailFormData: z.infer<typeof formSchema>) => {
     try {
         const { error } = await resend.emails.send({
             from: `${process.env.RESEND_FROM_EMAIL}`,
-            to: [emailFormData.email],
+            to: [emailFormData.email.toLowerCase()],
             subject: "Welcome",
-            react: EmailTemplate({ firstName: emailFormData.firstname }),
+            react: EmailTemplate({ firstName: emailFormData.firstname, lastName: emailFormData.lastname }),
           });
 
-          if (error) throw new Error("Something went wrong!");
+          if (error) {
+            console.log(error)
+            throw new Error("Something went wrong!")
+          };
+
     } catch (e) {
         throw e;
     }
