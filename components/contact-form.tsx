@@ -24,10 +24,13 @@ import { z } from "zod";
 
 import { formSchema } from "@/lib/formSchema";
 import { send } from "@/lib/email";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function ContactForm() {
-    // 1. Define your form.
+  const [loading, setLoading] = useState(false); // Track loading state
+
+  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,16 +41,24 @@ export default function ContactForm() {
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    send(values);
-  }
-  
+  // Define a submit handler
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setLoading(true); // Set loading to true before the submit process
+    await send(values); // Simulate sending email
+    setLoading(false); // Set loading to false after submit
+
+    // Reset form fields to their default (empty) values after submission
+    form.reset({
+      firstname: "",
+      lastname: "",
+      email: "",
+      message: "",
+    });
+  };
+
   return (
     <Fragment>
-        <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 py-8 px-4 dark:bg-slate-900">
+      <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 py-8 px-4 dark:bg-slate-900">
         <CardHeader>
           <CardTitle>Contact Me</CardTitle>
           <CardDescription>
@@ -121,13 +132,21 @@ export default function ContactForm() {
                   </FormItem>
                 )}
               />
-              <div className="pt-1">
-                <Button type="submit" className="dark:text-white">Submit</Button>
-              </div>
+
+              {loading ? (
+                <Button disabled className="flex items-center dark:text-white">
+                  <Loader2 className="mr-1 h-4 w-4 animate-spin" />
+                  <div>Loading...</div>
+                </Button>
+              ) : (
+                <Button type="submit" className="dark:text-white">
+                  Submit
+                </Button>
+              )}
             </form>
           </Form>
         </CardContent>
       </Card>
     </Fragment>
-  )
+  );
 }
