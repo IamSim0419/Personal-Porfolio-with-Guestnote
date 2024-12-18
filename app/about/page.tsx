@@ -25,10 +25,10 @@ export default function AboutPage() {
               NextJS/Front-End <span className="text-primary">Developer</span>
             </h1>
             <p className="mt-4 text-gray-900/80 text-xl md:text-xl">
-              I'm{" "}
+              I&apos;m{" "}
               <span className="underline underline-offset-4 decoration-primary">
                 Simrech Somogod
-              </span>{" "} 
+              </span>{" "}
               a dedicated and detail-oriented career shifter with a solid foundation in front-end development, specializing in Next.js. I&apos;ve gained hands-on experience building responsive, user-centric web applications. Passionate about continuous learning, I&apos;m committed to creating efficient, scalable solutions with clean, maintainable code. I&apos;m excited to bring my unique perspective and growing skill set to new development challenges.
             </p>
           </Card>
