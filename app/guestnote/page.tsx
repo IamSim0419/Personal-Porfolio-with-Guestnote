@@ -110,7 +110,7 @@ async function GuestnoteForm() {
       <Input type="text" placeholder="Your Message..." />
 
       <RegisterLink>
-          <Button className="w-full dark:text-white">Note</Button>
+          <Button className="w-full dark:text-white">Try fot free</Button>
       </RegisterLink>
     </div>
   );
