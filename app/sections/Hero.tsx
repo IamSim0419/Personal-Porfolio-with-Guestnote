@@ -13,7 +13,7 @@ export default function Hero() {
             Hey! I&apos;m <span className="text-primary">Simreich</span>⚡
           </h1>
           <h2 className="text-3xl md:text-4xl  font-semibold mt-4 text-gray-700 dark:text-white/70">
-            Next.js & Front-End Developer based in the PH.
+            Next.js/Front-End Developer based in the PH.
           </h2>
 
           <div className="flex justify-center items-center md:gap-x-2 mt-5">
@@ -24,9 +24,9 @@ export default function Hero() {
               Contact Me
             </Link>
 
-            <Button className="text-md text-white bg-black  hover:bg-transparent rounded-2xl hover:text-black hover:border-black border-2 px-6 py-4 dark:text-black dark:bg-white dark:border-black dark:hover:bg-black dark:hover:text-white dark:hover:border-white">
+            <Button className="text-md text-white bg-black  hover:bg-transparent rounded-2xl hover:text-black hover:border-black hover:border-2 px-6 py-4 dark:text-black dark:bg-white dark:border-black dark:hover:bg-black dark:hover:text-white dark:hover:border-white">
               <a
-                href="/resume/my-resume.pdf"
+                href="/resume/CV.pdf"
                 download
                 className="flex items-center gap-2"
               >
