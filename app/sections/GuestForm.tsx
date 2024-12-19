@@ -41,7 +41,6 @@ function SubmitButton() {
       {pending ? (
         <Button disabled className="flex items-center dark:text-white">
           <Loader2 className="mr-1 h-4 w-4 animate-spin" />
-          {/* <div>Loading...</div> */}
         </Button>
       ) : (
         <Button type="submit" className="dark:text-white">
