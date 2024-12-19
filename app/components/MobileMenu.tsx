@@ -39,8 +39,8 @@ export function MobileMenu() {
               href={link.href}
               className={cn(
                 location === link.href
-                  ? "bg-muted"
-                  : "hover:bg-muted hover:bg-opacity-75",
+                  ? "bg-primary/50"
+                  : "hover:bg-primary/30 hover:bg-opacity-75",
                 "group text-xl p-3 font-semibold rounded-md"
               )}
             >

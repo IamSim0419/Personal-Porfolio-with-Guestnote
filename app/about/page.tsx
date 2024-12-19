@@ -24,7 +24,7 @@ export default function AboutPage() {
             <h1 className="text-4xl font-semibold md:text-5xl lg:text-6xl">
               NextJS/Front-End <span className="text-primary">Developer</span>
             </h1>
-            <p className="mt-4 text-gray-900/80 text-xl md:text-xl">
+            <p className="mt-4 text-muted-foreground text-xl md:text-xl">
               I&apos;m{" "}
               <span className="underline underline-offset-4 decoration-primary">
                 Simrech Somogod

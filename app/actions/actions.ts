@@ -24,7 +24,6 @@ export async function postData(formData: FormData) {
         }
     })
    
-
     revalidatePath("/guestnote");
 }
 

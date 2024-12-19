@@ -28,7 +28,8 @@ export async function GET() {
         })
     }
 
-    return NextResponse.redirect("http://localhost:3000/guestnote");
+    // return NextResponse.redirect("http://localhost:3000/guestnote");
+    return NextResponse.redirect("https://personal-porfolio-with-guestnote-six.vercel.app/guestnote");
 }
 
 

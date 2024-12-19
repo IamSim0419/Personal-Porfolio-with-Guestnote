@@ -12,7 +12,7 @@ export default function Hero() {
           <h1 className="font-extrabold text-5xl lg:text-6xl">
             Hey! I&apos;m <span className="text-primary">Simreich</span>⚡
           </h1>
-          <h2 className="text-3xl md:text-4xl  font-semibold mt-4 text-gray-700 dark:text-white/70">
+          <h2 className="text-3xl md:text-4xl  font-semibold mt-4 text-gray-700 text-muted-foreground">
             Next.js/Front-End Developer based in the PH.
           </h2>
 
