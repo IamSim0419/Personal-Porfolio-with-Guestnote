@@ -66,14 +66,14 @@ const socialMedia = [
     icon: linkedin,
     name: "Linkedin",
     username: "@Simreich",
-    link: "https://www.linkedin.com/in/simreich-somogod-a977a02b3/",
+    link: "https://www.linkedin.com/in/simreich-somogod-a977a02b3",
   },
   {
     id: 3,
     icon: twitter,
     name: "X / Twitter",
     username: "@callmesim1989",
-    link: "http://localhost:3000/",
+    link: "https://x.com/callmesim1989",
   },
 ];
 
