@@ -116,7 +116,7 @@ export default function SectiomTwo() {
                 <p className="text-muted-foreground">{item.username}</p>
               </div>
               
-              <Button className="text-lg md:mt-4" size="lg" asChild>
+              <Button className="text-lg md:mt-4 text-white" size="lg" asChild>
                 <a href={item.link}>Follow</a>
               </Button>
             </Card>
