@@ -21,7 +21,7 @@ export default function Contact() {
         </div>
         <div>
           <h2 className="font-semibold underline underline-offset-2 decoration-primary tracking-wider">Address</h2>
-          <span>44 Rodriguez Street, Iloilo</span>
+          <span>Iloilo City, PH</span>
         </div>
         <div>
           <h2 className="font-semibold underline underline-offset-2 decoration-primary tracking-wider">Phone</h2>
