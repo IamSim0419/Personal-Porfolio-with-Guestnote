@@ -122,7 +122,7 @@ export default function ContactForm() {
                   <Button disabled type="submit" className="dark:text-white">
                   Submit
                   </Button>
-                  <p className="text-sm inline ml-2 text-red-500">Currently unavailable. I apologize for the inconvenience.</p>
+                  {/* <p className="text-sm inline ml-2 text-red-500">Currently unavailable. I apologize for the inconvenience.</p> */}
                 </>
               
             )}
