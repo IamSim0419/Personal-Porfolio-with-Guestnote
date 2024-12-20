@@ -34,8 +34,7 @@ export default function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstname: "",
-      lastname: "",
+      fullname: "",
       email: "",
       message: "",
     },
@@ -52,42 +51,31 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 py-8 px-4 dark:bg-slate-900">
+    <Card className="col-span-1 lg:col-span-2 border-none p-2 bg-gray-100  dark:bg-slate-900">
       <CardHeader>
         <CardTitle className="tracking-wide">Contact Me</CardTitle>
         <CardDescription>
           Fill out the form below and we&apos;ll get back to you as soon as possible.
         </CardDescription>
       </CardHeader>
+
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
             <FormField
               control={form.control}
-              name="firstname"
+              name="fullname"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-lg">Firstname</FormLabel>
+                  <FormLabel className="text-lg">Fullname</FormLabel>
                   <FormControl>
-                    <Input placeholder="First name" {...field} />
+                    <Input placeholder="Full name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="lastname"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg">Lastname</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Last name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            
             <FormField
               control={form.control}
               name="email"

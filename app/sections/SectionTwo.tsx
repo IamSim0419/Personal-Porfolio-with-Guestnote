@@ -1,4 +1,4 @@
-import markusspiske from "@/assets/images/markusspiske.jpg";
+import MarkusSpiske from "@/assets/images/markusspiske.jpg";
 import javascript from "@/assets/icons/javascript.svg";
 import typescript from "@/assets/icons/typescript.svg";
 import html5 from "@/assets/icons/html5.svg"
@@ -16,6 +16,7 @@ import git from "@/assets/icons/git.svg";
 import github01 from "@/assets/icons/github.svg";
 import figma from "@/assets/icons/figma.svg";
 import npm from "@/assets/icons/npm.svg";
+import vercel from "@/assets/icons/vercel_light.svg"
 
 import github02 from "@/assets/icons/github.svg";
 import twitter from "@/assets/icons/twitter.svg";
@@ -49,6 +50,7 @@ const icons = [
     postgresql,
     figma,
     npm,
+    vercel
 ];
 
 const socialMedia = [
@@ -79,9 +81,9 @@ export default function SectiomTwo() {
   return (
     <section className="my-12 md:my-16">
       <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-10 text-zinc-800">
-      <div className="w-full relative col-span-1">
+      <div className="w-full col-span-1">
         <Image
-          src={markusspiske}
+          src={MarkusSpiske}
           alt="square"
           className="w-full h-full object-cover rounded-2xl"
         />
@@ -100,16 +102,21 @@ export default function SectiomTwo() {
           </CardContent>
         </Card>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 w-full gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {socialMedia.map((item) => (
             <Card
               key={item.id}
-              className="p-4 flex flex-col items-center sm:items-start bg-gray-100 border-none dark:bg-slate-900"
+              className="p-4 flex flex-row md:flex-col justify-between items-center bg-gray-100 border-none dark:bg-slate-900"
             >
-              <Image src={item.icon} alt="Icon" className="w-16 h-16" />
-              <h1 className="text-xl font-medium pt-3">{item.name}</h1>
-              <p className="text-muted-foreground">{item.username}</p>
-              <Button className="mt-4" size="sm" asChild>
+              <div className="flex flex-col items-center justify-center">
+                <div className="px-[36px]">
+                  <Image src={item.icon} alt="Icon" className="w-16 h-16" />
+                </div>
+                <h1 className="text-xl font-medium pt-3">{item.name}</h1>
+                <p className="text-muted-foreground">{item.username}</p>
+              </div>
+              
+              <Button className="mt-4 text-lg md:w-full" size="lg" asChild>
                 <a href={item.link}>Follow</a>
               </Button>
             </Card>

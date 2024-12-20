@@ -8,7 +8,8 @@ export default function Hero() {
   return (
     <section className="mt-6 md:mt-10 lg:mt-16 scroll-mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
-        <div className="col-span-1 lg:col-span-2 h-full bg-gray-100 min-h-[500px] lg:min-h-[300px] rounded-2xl p-8 flex flex-col justify-center items-baseline dark:bg-slate-900 dark:text-white">
+        
+        <div className="col-span-1 lg:col-span-2 h-full bg-gray-100   rounded-2xl px-8 py-12 md:py-16 flex flex-col justify-center items-baseline dark:bg-slate-900 dark:text-white">
           <h1 className="font-extrabold text-5xl lg:text-6xl">
             Hey! I&apos;m <span className="text-primary">Simreich</span>⚡
           </h1>

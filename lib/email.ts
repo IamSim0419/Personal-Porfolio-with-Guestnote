@@ -21,8 +21,7 @@ export const send = async (emailFormData: z.infer<typeof formSchema>) => {
             to: [emailFormData.email.toLowerCase()], // To email (lowercased for consistency)
             subject: "Welcome", // Email subject
             react: EmailTemplate({ // Use the EmailTemplate component to generate HTML content
-                firstName: emailFormData.firstname,
-                lastName: emailFormData.lastname,
+                fullname: emailFormData.fullname,
             }),
         });
 
