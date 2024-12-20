@@ -118,9 +118,13 @@ export default function ContactForm() {
                 <div>Loading...</div>
               </Button>
             ) : (
-              <Button type="submit" className="dark:text-white">
-                Submit
-              </Button>
+                <>
+                  <Button disabled type="submit" className="dark:text-white">
+                  Submit
+                  </Button>
+                  <p className="text-sm inline ml-2 text-red-500">Currently unavailable. I apologize for the inconvenience.</p>
+                </>
+              
             )}
           </form>
         </Form>
