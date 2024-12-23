@@ -13,8 +13,8 @@ export default function Hero() {
           <h1 className="font-extrabold text-5xl lg:text-6xl">
             Hey! I&apos;m <span className="text-primary">Simreich</span>⚡
           </h1>
-          <h2 className="text-3xl md:text-4xl  font-semibold mt-4 text-gray-700 text-muted-foreground">
-            Next.js/Front-End Developer based in the PH.
+          <h2 className="text-3xl md:text-4xl  font-semibold mt-4 text-muted-foreground">
+            Front-End Developer | REACT.JS | NEXT.JS
           </h2>
 
           <div className="flex justify-center items-center md:gap-x-2 mt-5">
