@@ -21,15 +21,15 @@ export default function AboutPage() {
             />
           </div>
           <Card className="col-span-1 lg:col-span-2 border-none bg-gray-100 p-8 flex flex-col justify-center items-baseline dark:bg-slate-900">
-            <h1 className="text-4xl font-semibold md:text-5xl lg:text-6xl">
-              Frontend Software Developer
+            <h1 className="text-5xl font-semibold md:text-6xl lg:text-7xl">
+              Frontend <span className="text-primary">Developer</span>
             </h1>
             <p className="mt-4 text-muted-foreground text-xl md:text-xl">
               I&apos;m{" "}
-              <span className="underline underline-offset-4 decoration-primary">
+              <span className="text-primary">
                 Simreich Somogod
               </span>{" "}
-              a dedicated and detail-oriented <span className="text-primary">Frontend Developer</span> with a solid foundation in building responsive, user-centric web applications, specializing in React.js | Next.js. I&apos;ve gained hands-on experience crafting scalable and efficient solutions with clean, maintainable code.  Passionate about continuous learning, I&apos;m excited to bring my unique perspective and growing skill set to new development challenges.
+              a dedicated and detail-oriented Frontend Developer with a solid foundation in building responsive, user-centric web applications, specializing in React.js | Next.js. I&apos;ve gained hands-on experience crafting scalable and efficient solutions with clean, maintainable code.  Passionate about continuous learning, I&apos;m excited to bring my unique perspective and growing skill set to new development challenges.
             </p>
           </Card>
         </div>
