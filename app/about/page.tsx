@@ -27,7 +27,7 @@ export default function AboutPage() {
             <p className="mt-4 text-muted-foreground text-xl md:text-xl">
               I&apos;m{" "}
               <span className="underline underline-offset-4 decoration-primary">
-                Simrech Somogod
+                Simreich Somogod
               </span>{" "}
               a dedicated and detail-oriented <span className="text-primary">Frontend Developer</span> with a solid foundation in building responsive, user-centric web applications, specializing in React.js | Next.js. I&apos;ve gained hands-on experience crafting scalable and efficient solutions with clean, maintainable code.  Passionate about continuous learning, I&apos;m excited to bring my unique perspective and growing skill set to new development challenges.
             </p>
