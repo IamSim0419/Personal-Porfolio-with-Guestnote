@@ -14,7 +14,7 @@ export default function Hero() {
             Hey! I&apos;m <span className="text-primary">Simreich</span>⚡
           </h1>
           <h2 className="text-3xl md:text-4xl  font-semibold mt-4 text-muted-foreground">
-            Front-End Developer | REACT.JS | NEXT.JS
+            Frontend Developer | REACT.JS | NEXT.JS
           </h2>
 
           <div className="flex justify-center items-center md:gap-x-2 mt-5">
