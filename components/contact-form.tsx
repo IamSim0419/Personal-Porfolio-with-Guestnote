@@ -23,14 +23,14 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { formSchema } from "@/lib/formSchema";
-import { send } from "@/lib/email";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import { toast } from "react-toastify";
 
 export default function ContactForm() {
-  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState("");
 
-  // Initialize the form with default values and validation schema
+  //! Initialize the form with default values and validation schema
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,14 +40,31 @@ export default function ContactForm() {
     },
   });
 
-  // Handle form submission
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    setLoading(true); // Set loading to true before the submission process
-    await send(values); // Simulate sending the email
-    setLoading(false); // Set loading to false after the submission
+    setResult("Sending....");
+    const formData = new FormData();
+    formData.append("fullname", values.fullname);
+    formData.append("email", values.email);
+    formData.append("message", values.message);
 
-    // Reset form fields after the submission is complete
-    form.reset(); // Clears the form fields
+    formData.append("access_key", "d77c9380-9484-4208-a891-c25517abd35c");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("");
+      toast.success("Message sent successfully");
+      form.reset();
+    } else {
+      console.log("Error", data);
+      toast.error(data.message);
+      setResult("");
+    }
   };
 
   return (
@@ -55,7 +72,8 @@ export default function ContactForm() {
       <CardHeader>
         <CardTitle className="tracking-wide">Contact Me</CardTitle>
         <CardDescription>
-          Fill out the form below and we&apos;ll get back to you as soon as possible.
+          Fill out the form below and we&apos;ll get back to you as soon as
+          possible.
         </CardDescription>
       </CardHeader>
 
@@ -75,7 +93,7 @@ export default function ContactForm() {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="email"
@@ -112,20 +130,16 @@ export default function ContactForm() {
               )}
             />
 
-            {loading ? (
-              <Button disabled className="flex items-center dark:text-white">
-                <Loader2 className="mr-1 h-4 w-4 animate-spin" />
-                <div>Loading...</div>
-              </Button>
-            ) : (
+            <Button className="flex items-center dark:text-white">
+              {result ? (
                 <>
-                  <Button disabled type="submit" className="dark:text-white">
-                  Submit
-                  </Button>
-                  {/* <p className="text-sm inline ml-2 text-red-500">Currently unavailable. I apologize for the inconvenience.</p> */}
+                  <Loader2 className="mr-1 h-4 w-4 animate-spin" />
+                  <div>{result}</div>
                 </>
-              
-            )}
+              ) : (
+                <div>Submit</div>
+              )}
+            </Button>
           </form>
         </Form>
       </CardContent>
